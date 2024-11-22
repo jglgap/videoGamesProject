@@ -22,6 +22,6 @@ from news import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.news,name='home'),
-    # path('cards/',include('cards.urls')),
+     path('cards/',include('cards.urls')),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

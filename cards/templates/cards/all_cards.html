@@ -1,0 +1,26 @@
+{% extends "news/base.html" %} {% load static %} {% block content %}
+<div class="container mt-4">
+  {% if cards %}
+  <div class="row g-4">
+    {% for card in cards %}
+    <div class="col-md-4">
+      <div class="card">
+        <img
+          src="{{ card.img.url }}"
+          class="card-img-top"
+          alt="Imagen de {{ elemento.titulo }}"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ card.name }}</h5>
+          <p class="card-text">{{ card.position }}</p>
+          <a href="{{ card.url }}" class="btn btn-info">Ver mas</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p>No hay elementos disponibles.</p>
+  {% endif %}
+</div>
+{% endblock %}
