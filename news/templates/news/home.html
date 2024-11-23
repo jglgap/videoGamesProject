@@ -18,7 +18,7 @@
   {% for new in news %}
   <div class="col-lg-4 col-md-6">
     <img src="{{ new.img.url }}" class="img-fluid mb-2" />
-    <p>{{ new.date }}</p>
+    <p>{{ new.date|date:'M d Y'|upper }}</p>
     <h3>{{ new.title }}</h3>
     <p>{{ new.description }}</p>
   </div>
